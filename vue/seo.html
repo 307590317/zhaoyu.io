@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue首屏渲染优化与SEO | MrZhao&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/assets/logo.jpg">
+    <meta name="description" content="个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.7f07d26c.css" as="style"><link rel="preload" href="/assets/js/app.adc86153.js" as="script"><link rel="preload" href="/assets/js/3.69238fd6.js" as="script"><link rel="preload" href="/assets/js/2.c7128555.js" as="script"><link rel="preload" href="/assets/js/1.d6071190.js" as="script"><link rel="preload" href="/assets/js/121.c4789490.js" as="script"><link rel="prefetch" href="/assets/js/100.d7ec3325.js"><link rel="prefetch" href="/assets/js/101.1e1bb1f6.js"><link rel="prefetch" href="/assets/js/102.794d216f.js"><link rel="prefetch" href="/assets/js/103.6565e39e.js"><link rel="prefetch" href="/assets/js/104.61c0282b.js"><link rel="prefetch" href="/assets/js/105.5c5e9f9a.js"><link rel="prefetch" href="/assets/js/106.9384fe72.js"><link rel="prefetch" href="/assets/js/107.348fd479.js"><link rel="prefetch" href="/assets/js/108.3c33b9ed.js"><link rel="prefetch" href="/assets/js/109.65ae043d.js"><link rel="prefetch" href="/assets/js/11.af4014cb.js"><link rel="prefetch" href="/assets/js/110.8982cf85.js"><link rel="prefetch" href="/assets/js/111.7ccd4e21.js"><link rel="prefetch" href="/assets/js/112.861df397.js"><link rel="prefetch" href="/assets/js/113.2e63ce89.js"><link rel="prefetch" href="/assets/js/114.53c238d9.js"><link rel="prefetch" href="/assets/js/115.73243686.js"><link rel="prefetch" href="/assets/js/116.d2fd53e8.js"><link rel="prefetch" href="/assets/js/117.68815a1b.js"><link rel="prefetch" href="/assets/js/118.46eccd4d.js"><link rel="prefetch" href="/assets/js/119.b5af0f67.js"><link rel="prefetch" href="/assets/js/12.a5cf139d.js"><link rel="prefetch" href="/assets/js/120.348e3434.js"><link rel="prefetch" href="/assets/js/122.e26e9cc2.js"><link rel="prefetch" href="/assets/js/123.24ef60a1.js"><link rel="prefetch" href="/assets/js/124.20a823b8.js"><link rel="prefetch" href="/assets/js/125.e3e6759c.js"><link rel="prefetch" href="/assets/js/126.8f0b0f69.js"><link rel="prefetch" href="/assets/js/127.4784b7e4.js"><link rel="prefetch" href="/assets/js/128.4207c97c.js"><link rel="prefetch" href="/assets/js/129.16edc40e.js"><link rel="prefetch" href="/assets/js/13.7ff7858c.js"><link rel="prefetch" href="/assets/js/130.6ff67e2d.js"><link rel="prefetch" href="/assets/js/131.f4f0d954.js"><link rel="prefetch" href="/assets/js/132.def635be.js"><link rel="prefetch" href="/assets/js/133.bc56cd38.js"><link rel="prefetch" href="/assets/js/134.3ba4c3b3.js"><link rel="prefetch" href="/assets/js/135.98124879.js"><link rel="prefetch" href="/assets/js/136.8efad724.js"><link rel="prefetch" href="/assets/js/14.b0b0ce5d.js"><link rel="prefetch" href="/assets/js/15.6a364248.js"><link rel="prefetch" href="/assets/js/16.6b3933cb.js"><link rel="prefetch" href="/assets/js/17.2dfc0219.js"><link rel="prefetch" href="/assets/js/18.4e9902c3.js"><link rel="prefetch" href="/assets/js/19.04170ad8.js"><link rel="prefetch" href="/assets/js/20.c113fd2b.js"><link rel="prefetch" href="/assets/js/21.6c9baeb9.js"><link rel="prefetch" href="/assets/js/22.3f0d10d5.js"><link rel="prefetch" href="/assets/js/23.d77af887.js"><link rel="prefetch" href="/assets/js/24.598a2133.js"><link rel="prefetch" href="/assets/js/25.45036fea.js"><link rel="prefetch" href="/assets/js/26.e01010e1.js"><link rel="prefetch" href="/assets/js/27.cee97aea.js"><link rel="prefetch" href="/assets/js/28.3a31ac6d.js"><link rel="prefetch" href="/assets/js/29.db7acdc4.js"><link rel="prefetch" href="/assets/js/30.53d36e64.js"><link rel="prefetch" href="/assets/js/31.a4b42b33.js"><link rel="prefetch" href="/assets/js/32.0aabe8da.js"><link rel="prefetch" href="/assets/js/33.fcee4871.js"><link rel="prefetch" href="/assets/js/34.b720fdf6.js"><link rel="prefetch" href="/assets/js/35.383ff12b.js"><link rel="prefetch" href="/assets/js/36.3e6839cc.js"><link rel="prefetch" href="/assets/js/37.8c12b06d.js"><link rel="prefetch" href="/assets/js/38.4d0cb247.js"><link rel="prefetch" href="/assets/js/39.890d029a.js"><link rel="prefetch" href="/assets/js/4.22afcbe7.js"><link rel="prefetch" href="/assets/js/40.eb3e2f9e.js"><link rel="prefetch" href="/assets/js/41.90ac203b.js"><link rel="prefetch" href="/assets/js/42.eb77291b.js"><link rel="prefetch" href="/assets/js/43.d8b7ed00.js"><link rel="prefetch" href="/assets/js/44.e1301e8c.js"><link rel="prefetch" href="/assets/js/45.148883b8.js"><link rel="prefetch" href="/assets/js/46.2fd1ad6b.js"><link rel="prefetch" href="/assets/js/47.be067d2f.js"><link rel="prefetch" href="/assets/js/48.9882867f.js"><link rel="prefetch" href="/assets/js/49.d02d9e9b.js"><link rel="prefetch" href="/assets/js/5.9651ef5a.js"><link rel="prefetch" href="/assets/js/50.942cbf6e.js"><link rel="prefetch" href="/assets/js/51.caac4495.js"><link rel="prefetch" href="/assets/js/52.2daac61e.js"><link rel="prefetch" href="/assets/js/53.442c7cc9.js"><link rel="prefetch" href="/assets/js/54.9eddb6e3.js"><link rel="prefetch" href="/assets/js/55.02948cf5.js"><link rel="prefetch" href="/assets/js/56.3481cdbe.js"><link rel="prefetch" href="/assets/js/57.8e168694.js"><link rel="prefetch" href="/assets/js/58.92523396.js"><link rel="prefetch" href="/assets/js/59.da65a2e1.js"><link rel="prefetch" href="/assets/js/6.bb603ec8.js"><link rel="prefetch" href="/assets/js/60.ecc4e16e.js"><link rel="prefetch" href="/assets/js/61.8670517a.js"><link rel="prefetch" href="/assets/js/62.46bc56d3.js"><link rel="prefetch" href="/assets/js/63.59f8d1a9.js"><link rel="prefetch" href="/assets/js/64.e9867190.js"><link rel="prefetch" href="/assets/js/65.59f5647c.js"><link rel="prefetch" href="/assets/js/66.4bc9acc4.js"><link rel="prefetch" href="/assets/js/67.8ffe7b5d.js"><link rel="prefetch" href="/assets/js/68.41bccd56.js"><link rel="prefetch" href="/assets/js/69.58168c78.js"><link rel="prefetch" href="/assets/js/7.b18ad657.js"><link rel="prefetch" href="/assets/js/70.90267832.js"><link rel="prefetch" href="/assets/js/71.64694959.js"><link rel="prefetch" href="/assets/js/72.ada7dd96.js"><link rel="prefetch" href="/assets/js/73.2a411ed4.js"><link rel="prefetch" href="/assets/js/74.09ddf6e0.js"><link rel="prefetch" href="/assets/js/75.c275b107.js"><link rel="prefetch" href="/assets/js/76.5e0a308c.js"><link rel="prefetch" href="/assets/js/77.2f046bd0.js"><link rel="prefetch" href="/assets/js/78.4f431479.js"><link rel="prefetch" href="/assets/js/79.51c7bde7.js"><link rel="prefetch" href="/assets/js/8.de50125a.js"><link rel="prefetch" href="/assets/js/80.708587f0.js"><link rel="prefetch" href="/assets/js/81.60dc3666.js"><link rel="prefetch" href="/assets/js/82.5abe5e13.js"><link rel="prefetch" href="/assets/js/83.fae3fc33.js"><link rel="prefetch" href="/assets/js/84.7b3cf325.js"><link rel="prefetch" href="/assets/js/85.a3f9d054.js"><link rel="prefetch" href="/assets/js/86.69cd60e4.js"><link rel="prefetch" href="/assets/js/87.000134ec.js"><link rel="prefetch" href="/assets/js/88.9984f3ea.js"><link rel="prefetch" href="/assets/js/89.dd08af02.js"><link rel="prefetch" href="/assets/js/90.423187c1.js"><link rel="prefetch" href="/assets/js/91.f835ab76.js"><link rel="prefetch" href="/assets/js/92.583e67ef.js"><link rel="prefetch" href="/assets/js/93.7d34582c.js"><link rel="prefetch" href="/assets/js/94.6a7a28e7.js"><link rel="prefetch" href="/assets/js/95.b359cf8d.js"><link rel="prefetch" href="/assets/js/96.95f65079.js"><link rel="prefetch" href="/assets/js/97.6de938a4.js"><link rel="prefetch" href="/assets/js/98.b00f6772.js"><link rel="prefetch" href="/assets/js/99.e4c39c71.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.a32f4da1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f07d26c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MrZhao's blog</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/feBase/js/" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/base.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/css/1.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/browser/1.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/mini/1.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/react/1.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/ssr/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/cloudflare/tunnel.html" class="nav-link">
+  Cloudflare
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/base.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/rollup/base.html" class="nav-link">
+  Rollup
+</a></li><li class="dropdown-item"><!----> <a href="/project/base.html" class="nav-link">
+  Project
+</a></li></ul></div></div><div class="nav-item"><a href="/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/leetcode/array.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/test/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/web3/" class="nav-link">
+  web3
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/feBase/js/" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/base.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/css/1.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/browser/1.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/mini/1.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link router-link-active">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/react/1.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/ssr/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/cloudflare/tunnel.html" class="nav-link">
+  Cloudflare
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/base.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/rollup/base.html" class="nav-link">
+  Rollup
+</a></li><li class="dropdown-item"><!----> <a href="/project/base.html" class="nav-link">
+  Project
+</a></li></ul></div></div><div class="nav-item"><a href="/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/leetcode/array.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/test/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/web3/" class="nav-link">
+  web3
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Vue</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/vue/" aria-current="page" class="sidebar-link">Vue核心</a></li><li><a href="/vue/1.html" class="sidebar-link">Vue常用</a></li><li><a href="/vue/2.html" class="sidebar-link">Vue路由</a></li><li><a href="/vue/3.html" class="sidebar-link">Vue组件</a></li><li><a href="/vue/defineReactive.html" class="sidebar-link">Vue 响应式数据源码解析</a></li><li><a href="/vue/render.html" class="sidebar-link">Vue 模板编译源码解析</a></li><li><a href="/vue/mount.html" class="sidebar-link">Vue 初始化渲染源码解析</a></li><li><a href="/vue/observer.html" class="sidebar-link">Vue 渲染更新源码解析</a></li><li><a href="/vue/nextTick.html" class="sidebar-link">Vue 异步更新源码解析</a></li><li><a href="/vue/watch.html" class="sidebar-link">Vue 侦听器(watch)源码解析</a></li><li><a href="/vue/computed.html" class="sidebar-link">Vue 计算属性(computed)源码解析</a></li><li><a href="/vue/lifecycle.html" class="sidebar-link">Vue 生命周期源码解析</a></li><li><a href="/vue/domdiff.html" class="sidebar-link">Vue DOMdiff(patch)源码解析</a></li><li><a href="/vue/vuex.html" class="sidebar-link">Vuex源码解析</a></li><li><a href="/vue/seo.html" aria-current="page" class="active sidebar-link">Vue首屏渲染优化与SEO</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p></p><div class="table-of-contents"><ul><li><a href="#路由懒加载">路由懒加载</a></li><li><a href="#通过cdn引入第三方库">通过CDN引入第三方库</a></li><li><a href="#开启gzip压缩">开启gzip压缩</a></li><li><a href="#spa预渲染">SPA预渲染</a></li></ul></div><p></p> <h1 id="vue首屏渲染优化与seo"><a href="#vue首屏渲染优化与seo" class="header-anchor">#</a> Vue首屏渲染优化与SEO</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>对于展示类型的页面，可以使用<code>SSR</code>服务端渲染的方式来提高首屏加载的速度，以及<code>SEO</code>的优化，那么对于<code>SPA</code>类型的项目，如何提高首屏的加载速度以及<code>SEO</code>的优化呢</p></div> <h2 id="路由懒加载"><a href="#路由懒加载" class="header-anchor">#</a> 路由懒加载</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>在路由中采用懒加载的写法，。此方法会将懒加载的页面分成多个<code>js</code>打包，减小了单个文件的大小。<code>path</code>到对应的路由时，才会异步的加载对应的页面以及数据，这样可以提高首屏页面加载的速度，减少不必要的页面加载</p></div> <h2 id="通过cdn引入第三方库"><a href="#通过cdn引入第三方库" class="header-anchor">#</a> 通过CDN引入第三方库</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>项目开发中，会用到很多第三方库，如果可以按需引入，只引入自己需要的组件来减少所占的空间。但也会有一些不能按需引入，我们可以采用<code>CDN</code>外部加载，在<code>index.html</code>中从<code>CDN</code>引入第三方库（国内采用https://www.bootcdn.cn/）。通过<code>CDN</code>引入，可以通过CDN加速，获得更快的访问速度。目前采用引入依赖包生产环境的<code>js</code>文件加载，直接通过<code>window</code>可以访问暴露出的全局变量，不必通过<code>import</code>引入、<code>Vue.use</code>注册。
+在<code>webpack</code>打包配置中添加<code>externals</code>字段在运行时去外部获取这些扩展依赖。<code>key</code>为依赖包的名称，<code>value</code>是源码抛出的全局变量。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token comment">//...</span>
+  <span class="token literal-property property">externals</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">vue</span><span class="token operator">:</span> <span class="token string">'Vue'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">vuex</span><span class="token operator">:</span> <span class="token string">'Vuex'</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'vue-router'</span><span class="token operator">:</span> <span class="token string">'VueRouter'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">axios</span><span class="token operator">:</span> <span class="token string">'axios'</span><span class="token punctuation">,</span>
+    <span class="token string-property property">'element-ui'</span><span class="token operator">:</span> <span class="token string">'ELEMENT'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div></div> <h2 id="开启gzip压缩"><a href="#开启gzip压缩" class="header-anchor">#</a> 开启gzip压缩</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p><code>gzip</code>压缩是一中<code>http</code>请求优化方式，通过减少文件体积来提高加载速度。<code>html、js、css</code>文件甚至<code>json</code>数据都可以用它压缩，可以减小60%以上的体积。前端配置<code>gzip</code>压缩，并且服务端使用<code>nginx</code>开启<code>gzip</code>，用来减小网络传输的流量大小。客户端和服务端必须共同支持<code>gzip</code>。前端压缩需要安装<code>compression-webpack-plugin</code>插件。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 在webpack中配置如下</span>
+<span class="token comment">// webpack.prod.config.js</span>
+<span class="token keyword">const</span> CompressionWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'compression-webpack-plugin'</span><span class="token punctuation">)</span>
+
+<span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token keyword">new</span> <span class="token class-name">CompressionWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.js$|\.html$|\.css</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token comment">// 都压缩哪些文件</span>
+    <span class="token literal-property property">threshold</span><span class="token operator">:</span> <span class="token number">10240</span><span class="token punctuation">,</span> <span class="token comment">// </span>
+    <span class="token literal-property property">deleteOriginalAssets</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// 不删除源文件，对于不支持的浏览器还会继续请求源文件</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">]</span>
+
+
+<span class="token comment">// nginx启用gzip</span>
+<span class="token comment">// nginx -s reload ：修改配置后重新加载生效</span>
+http <span class="token punctuation">{</span>
+  gzip on<span class="token punctuation">;</span> # 开启Gzip
+  gzip_static on<span class="token punctuation">;</span> # 开启静态文件压缩
+  gzip_min_length  1k<span class="token punctuation">;</span> # 不压缩临界值，大于1K的才压缩
+  gzip_buffers     <span class="token number">4</span> 16k<span class="token punctuation">;</span>
+  gzip_http_version <span class="token number">1.1</span><span class="token punctuation">;</span>
+  gzip_comp_level <span class="token number">2</span><span class="token punctuation">;</span>
+  gzip_types     text<span class="token operator">/</span>plain application<span class="token operator">/</span>javascript application<span class="token operator">/</span>x<span class="token operator">-</span>javascript text<span class="token operator">/</span>javascript text<span class="token operator">/</span>css application<span class="token operator">/</span>xml application<span class="token operator">/</span>xml<span class="token operator">+</span>rss<span class="token punctuation">;</span> # 进行压缩的文件类型
+  gzip_vary on<span class="token punctuation">;</span>
+  gzip_proxied   expired no<span class="token operator">-</span>cache no<span class="token operator">-</span>store <span class="token keyword">private</span> auth<span class="token punctuation">;</span>
+  gzip_disable   <span class="token string">&quot;MSIE [1-6]\.&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">// 其他配置....</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div></div> <h2 id="spa预渲染"><a href="#spa预渲染" class="header-anchor">#</a> SPA预渲染</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>对于<code>spa</code>类的项目，要想更快的话，只有预渲染。需要用到<code>prerender-spa-plugin</code>。
+预渲染原理：构建阶段生成匹配预渲染路径的<code>html</code>（写的每个需要预渲染的路由都有一个对应的<code>html</code>）。构建出来的<code>html</code>文件已有部分内容。</p> <p>需要用到<code>prerender-spa-plugin</code>来做预渲染，它是一个<code>webpack</code>插件，用于在单页应用中预渲染静态<code>html</code>内容。</p> <p><code>prerender-spa-plugin</code>原理：在<code>webpack</code>构建阶段的最后，在本地启动<code>node</code>服务，启动<code>Puppeteer</code>，通过<code>Puppeteer</code>这个<code>node</code>提供的无头浏览器（没有用户界面的浏览器），提供的<code>API</code>来模拟用户访问需要预渲染的路由，<code>node</code>服务收到请求处理后并返回对应的页面，之后<code>Puppeteer</code>处理返回的页面并渲染，拿到最终渲染的页面内容并替换掉之前打包的<code>html</code>文件。</p> <p>使用预渲染路由模式必须用<code>history</code>模式。因为<code>hash</code>不会被带到服务器，路由信息会丢失。</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">// 在webpack中引入并使用</span>
+<span class="token comment">// webpack.prod.config.js</span>
+<span class="token keyword">const</span> PrerenderSPAPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'prerender-spa-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> Renderer <span class="token operator">=</span> PrerenderSPAPlugin<span class="token punctuation">.</span>PuppeteerRenderer<span class="token punctuation">;</span>
+
+<span class="token comment">// 加到plugins对象中</span>
+<span class="token comment">// 预渲染配置</span>
+<span class="token keyword">new</span> <span class="token class-name">PrerenderSPAPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// 生成文件的路径，也可以与webpakc打包的一致</span>
+  <span class="token comment">// 这个目录只能有一级，如果目录层次大于一级，在生成的时候不会有任何错误提示，在预渲染的时候只会卡着不动。</span>
+  <span class="token literal-property property">staticDir</span><span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token comment">//必需，要渲染的路由。index有参数，就需要写成 /index/param1。</span>
+  <span class="token literal-property property">routes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'/login'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">//必须，要使用的实际渲染器，没有则不能预编译</span>
+  <span class="token literal-property property">renderer</span><span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">Renderer</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token literal-property property">inject</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">headless</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">//渲染时显示浏览器窗口。对调试很有用。  </span>
+      <span class="token comment">// 在 main.js 中 document.dispatchEvent(new Event('render-event'))，两者的事件名称要对应上。</span>
+      <span class="token literal-property property">renderAfterDocumentEvent</span><span class="token operator">:</span> <span class="token string">'render-event'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// main.js</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  router<span class="token punctuation">,</span>
+  store<span class="token punctuation">,</span>
+  <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token parameter">h</span> <span class="token operator">=&gt;</span> <span class="token function">h</span><span class="token punctuation">(</span>App<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token function">mounted</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 增加预渲染触发事件</span>
+    document<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span><span class="token string">'render-event'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">$mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 如果用了`nginx`做代理，nginx还需要一些配置</span>
+location <span class="token operator">=</span> <span class="token operator">/</span> <span class="token punctuation">{</span>
+  try_files <span class="token operator">/</span>home<span class="token operator">/</span>index<span class="token punctuation">.</span>html <span class="token operator">/</span>index<span class="token punctuation">.</span>html<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+location <span class="token operator">/</span> <span class="token punctuation">{</span>
+  try_files $uri $uri<span class="token operator">/</span> <span class="token operator">/</span>index<span class="token punctuation">.</span>html<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><p><strong>解决预渲染的<code>SEO</code>问题</strong></p> <p>需要安装<code>vue-meta-info</code>包。</p> <div class="language-shell line-numbers-mode"><pre class="language-shell"><code><span class="token function">npm</span> <span class="token function">install</span> vue-meta-info <span class="token parameter variable">--save</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>在<code>main.js</code>中引入</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> MetaInfo <span class="token keyword">from</span> <span class="token string">'vue-meta-info'</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>MetaInfo<span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>然后在各个<code>vue</code>页面里面配置属于自己的<code>meta</code>标签</p> <div class="language-vue line-numbers-mode"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 配置title和meta数据</span>
+  <span class="token literal-property property">metaInfo</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'title'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">meta</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'keywords'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'关键字'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'description'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">content</span><span class="token operator">:</span> <span class="token string">'描述'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">data</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/25/2021, 6:53:21 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/vue/vuex.html" class="prev">
+        Vuex源码解析
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.adc86153.js" defer></script><script src="/assets/js/3.69238fd6.js" defer></script><script src="/assets/js/2.c7128555.js" defer></script><script src="/assets/js/1.d6071190.js" defer></script><script src="/assets/js/121.c4789490.js" defer></script>
+  </body>
+</html>

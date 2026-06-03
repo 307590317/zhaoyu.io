@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>React Hooks | MrZhao&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/assets/logo.jpg">
+    <meta name="description" content="个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.7f07d26c.css" as="style"><link rel="preload" href="/assets/js/app.adc86153.js" as="script"><link rel="preload" href="/assets/js/3.69238fd6.js" as="script"><link rel="preload" href="/assets/js/2.c7128555.js" as="script"><link rel="preload" href="/assets/js/1.d6071190.js" as="script"><link rel="preload" href="/assets/js/96.95f65079.js" as="script"><link rel="prefetch" href="/assets/js/100.d7ec3325.js"><link rel="prefetch" href="/assets/js/101.1e1bb1f6.js"><link rel="prefetch" href="/assets/js/102.794d216f.js"><link rel="prefetch" href="/assets/js/103.6565e39e.js"><link rel="prefetch" href="/assets/js/104.61c0282b.js"><link rel="prefetch" href="/assets/js/105.5c5e9f9a.js"><link rel="prefetch" href="/assets/js/106.9384fe72.js"><link rel="prefetch" href="/assets/js/107.348fd479.js"><link rel="prefetch" href="/assets/js/108.3c33b9ed.js"><link rel="prefetch" href="/assets/js/109.65ae043d.js"><link rel="prefetch" href="/assets/js/11.af4014cb.js"><link rel="prefetch" href="/assets/js/110.8982cf85.js"><link rel="prefetch" href="/assets/js/111.7ccd4e21.js"><link rel="prefetch" href="/assets/js/112.861df397.js"><link rel="prefetch" href="/assets/js/113.2e63ce89.js"><link rel="prefetch" href="/assets/js/114.53c238d9.js"><link rel="prefetch" href="/assets/js/115.73243686.js"><link rel="prefetch" href="/assets/js/116.d2fd53e8.js"><link rel="prefetch" href="/assets/js/117.68815a1b.js"><link rel="prefetch" href="/assets/js/118.46eccd4d.js"><link rel="prefetch" href="/assets/js/119.b5af0f67.js"><link rel="prefetch" href="/assets/js/12.a5cf139d.js"><link rel="prefetch" href="/assets/js/120.348e3434.js"><link rel="prefetch" href="/assets/js/121.c4789490.js"><link rel="prefetch" href="/assets/js/122.e26e9cc2.js"><link rel="prefetch" href="/assets/js/123.24ef60a1.js"><link rel="prefetch" href="/assets/js/124.20a823b8.js"><link rel="prefetch" href="/assets/js/125.e3e6759c.js"><link rel="prefetch" href="/assets/js/126.8f0b0f69.js"><link rel="prefetch" href="/assets/js/127.4784b7e4.js"><link rel="prefetch" href="/assets/js/128.4207c97c.js"><link rel="prefetch" href="/assets/js/129.16edc40e.js"><link rel="prefetch" href="/assets/js/13.7ff7858c.js"><link rel="prefetch" href="/assets/js/130.6ff67e2d.js"><link rel="prefetch" href="/assets/js/131.f4f0d954.js"><link rel="prefetch" href="/assets/js/132.def635be.js"><link rel="prefetch" href="/assets/js/133.bc56cd38.js"><link rel="prefetch" href="/assets/js/134.3ba4c3b3.js"><link rel="prefetch" href="/assets/js/135.98124879.js"><link rel="prefetch" href="/assets/js/136.8efad724.js"><link rel="prefetch" href="/assets/js/14.b0b0ce5d.js"><link rel="prefetch" href="/assets/js/15.6a364248.js"><link rel="prefetch" href="/assets/js/16.6b3933cb.js"><link rel="prefetch" href="/assets/js/17.2dfc0219.js"><link rel="prefetch" href="/assets/js/18.4e9902c3.js"><link rel="prefetch" href="/assets/js/19.04170ad8.js"><link rel="prefetch" href="/assets/js/20.c113fd2b.js"><link rel="prefetch" href="/assets/js/21.6c9baeb9.js"><link rel="prefetch" href="/assets/js/22.3f0d10d5.js"><link rel="prefetch" href="/assets/js/23.d77af887.js"><link rel="prefetch" href="/assets/js/24.598a2133.js"><link rel="prefetch" href="/assets/js/25.45036fea.js"><link rel="prefetch" href="/assets/js/26.e01010e1.js"><link rel="prefetch" href="/assets/js/27.cee97aea.js"><link rel="prefetch" href="/assets/js/28.3a31ac6d.js"><link rel="prefetch" href="/assets/js/29.db7acdc4.js"><link rel="prefetch" href="/assets/js/30.53d36e64.js"><link rel="prefetch" href="/assets/js/31.a4b42b33.js"><link rel="prefetch" href="/assets/js/32.0aabe8da.js"><link rel="prefetch" href="/assets/js/33.fcee4871.js"><link rel="prefetch" href="/assets/js/34.b720fdf6.js"><link rel="prefetch" href="/assets/js/35.383ff12b.js"><link rel="prefetch" href="/assets/js/36.3e6839cc.js"><link rel="prefetch" href="/assets/js/37.8c12b06d.js"><link rel="prefetch" href="/assets/js/38.4d0cb247.js"><link rel="prefetch" href="/assets/js/39.890d029a.js"><link rel="prefetch" href="/assets/js/4.22afcbe7.js"><link rel="prefetch" href="/assets/js/40.eb3e2f9e.js"><link rel="prefetch" href="/assets/js/41.90ac203b.js"><link rel="prefetch" href="/assets/js/42.eb77291b.js"><link rel="prefetch" href="/assets/js/43.d8b7ed00.js"><link rel="prefetch" href="/assets/js/44.e1301e8c.js"><link rel="prefetch" href="/assets/js/45.148883b8.js"><link rel="prefetch" href="/assets/js/46.2fd1ad6b.js"><link rel="prefetch" href="/assets/js/47.be067d2f.js"><link rel="prefetch" href="/assets/js/48.9882867f.js"><link rel="prefetch" href="/assets/js/49.d02d9e9b.js"><link rel="prefetch" href="/assets/js/5.9651ef5a.js"><link rel="prefetch" href="/assets/js/50.942cbf6e.js"><link rel="prefetch" href="/assets/js/51.caac4495.js"><link rel="prefetch" href="/assets/js/52.2daac61e.js"><link rel="prefetch" href="/assets/js/53.442c7cc9.js"><link rel="prefetch" href="/assets/js/54.9eddb6e3.js"><link rel="prefetch" href="/assets/js/55.02948cf5.js"><link rel="prefetch" href="/assets/js/56.3481cdbe.js"><link rel="prefetch" href="/assets/js/57.8e168694.js"><link rel="prefetch" href="/assets/js/58.92523396.js"><link rel="prefetch" href="/assets/js/59.da65a2e1.js"><link rel="prefetch" href="/assets/js/6.bb603ec8.js"><link rel="prefetch" href="/assets/js/60.ecc4e16e.js"><link rel="prefetch" href="/assets/js/61.8670517a.js"><link rel="prefetch" href="/assets/js/62.46bc56d3.js"><link rel="prefetch" href="/assets/js/63.59f8d1a9.js"><link rel="prefetch" href="/assets/js/64.e9867190.js"><link rel="prefetch" href="/assets/js/65.59f5647c.js"><link rel="prefetch" href="/assets/js/66.4bc9acc4.js"><link rel="prefetch" href="/assets/js/67.8ffe7b5d.js"><link rel="prefetch" href="/assets/js/68.41bccd56.js"><link rel="prefetch" href="/assets/js/69.58168c78.js"><link rel="prefetch" href="/assets/js/7.b18ad657.js"><link rel="prefetch" href="/assets/js/70.90267832.js"><link rel="prefetch" href="/assets/js/71.64694959.js"><link rel="prefetch" href="/assets/js/72.ada7dd96.js"><link rel="prefetch" href="/assets/js/73.2a411ed4.js"><link rel="prefetch" href="/assets/js/74.09ddf6e0.js"><link rel="prefetch" href="/assets/js/75.c275b107.js"><link rel="prefetch" href="/assets/js/76.5e0a308c.js"><link rel="prefetch" href="/assets/js/77.2f046bd0.js"><link rel="prefetch" href="/assets/js/78.4f431479.js"><link rel="prefetch" href="/assets/js/79.51c7bde7.js"><link rel="prefetch" href="/assets/js/8.de50125a.js"><link rel="prefetch" href="/assets/js/80.708587f0.js"><link rel="prefetch" href="/assets/js/81.60dc3666.js"><link rel="prefetch" href="/assets/js/82.5abe5e13.js"><link rel="prefetch" href="/assets/js/83.fae3fc33.js"><link rel="prefetch" href="/assets/js/84.7b3cf325.js"><link rel="prefetch" href="/assets/js/85.a3f9d054.js"><link rel="prefetch" href="/assets/js/86.69cd60e4.js"><link rel="prefetch" href="/assets/js/87.000134ec.js"><link rel="prefetch" href="/assets/js/88.9984f3ea.js"><link rel="prefetch" href="/assets/js/89.dd08af02.js"><link rel="prefetch" href="/assets/js/90.423187c1.js"><link rel="prefetch" href="/assets/js/91.f835ab76.js"><link rel="prefetch" href="/assets/js/92.583e67ef.js"><link rel="prefetch" href="/assets/js/93.7d34582c.js"><link rel="prefetch" href="/assets/js/94.6a7a28e7.js"><link rel="prefetch" href="/assets/js/95.b359cf8d.js"><link rel="prefetch" href="/assets/js/97.6de938a4.js"><link rel="prefetch" href="/assets/js/98.b00f6772.js"><link rel="prefetch" href="/assets/js/99.e4c39c71.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.a32f4da1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f07d26c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MrZhao's blog</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/feBase/js/" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/base.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/css/1.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/browser/1.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/mini/1.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/react/1.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/ssr/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/cloudflare/tunnel.html" class="nav-link">
+  Cloudflare
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/base.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/rollup/base.html" class="nav-link">
+  Rollup
+</a></li><li class="dropdown-item"><!----> <a href="/project/base.html" class="nav-link">
+  Project
+</a></li></ul></div></div><div class="nav-item"><a href="/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/leetcode/array.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/test/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/web3/" class="nav-link">
+  web3
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/feBase/js/" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/base.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/css/1.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/browser/1.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/mini/1.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/react/1.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/ssr/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/cloudflare/tunnel.html" class="nav-link">
+  Cloudflare
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/base.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/rollup/base.html" class="nav-link">
+  Rollup
+</a></li><li class="dropdown-item"><!----> <a href="/project/base.html" class="nav-link">
+  Project
+</a></li></ul></div></div><div class="nav-item"><a href="/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/leetcode/array.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/test/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/web3/" class="nav-link">
+  web3
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>React</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/react/1.html" class="sidebar-link">React基础</a></li><li><a href="/react/2.html" class="sidebar-link">React路由</a></li><li><a href="/react/3.html" class="sidebar-link">React之redux(数据管理)</a></li><li><a href="/react/4.html" class="sidebar-link">React之domdiff策略</a></li><li><a href="/react/5.html" class="sidebar-link">React之渲染优化</a></li><li><a href="/react/6.html" aria-current="page" class="active sidebar-link">React Hooks</a></li><li><a href="/react/7.html" class="sidebar-link">React test</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p></p><div class="table-of-contents"><ul><li><a href="#为什么要使用-hooks">为什么要使用 Hooks</a><ul><li><a href="#class-组件的问题">Class 组件的问题</a></li><li><a href="#hooks-的优势">Hooks 的优势</a></li></ul></li><li><a href="#hooks-使用规则-铁律">Hooks 使用规则（铁律）</a><ul><li><a href="#只能在最外层调用-hook">只能在最外层调用 Hook</a></li><li><a href="#hooks-调用顺序必须一致">Hooks 调用顺序必须一致</a></li></ul></li><li><a href="#核心-hooks">核心 Hooks</a><ul><li><a href="#usestate">useState</a></li><li><a href="#useeffect">useEffect</a></li><li><a href="#useref">useRef</a></li><li><a href="#usememo">useMemo</a></li><li><a href="#usecallback">useCallback</a></li><li><a href="#usecontext">useContext</a></li></ul></li></ul></div><p></p> <h1 id="react-hooks"><a href="#react-hooks" class="header-anchor">#</a> React Hooks</h1> <blockquote><p>Hooks 让函数组件拥有状态、生命周期、副作用、性能优化等能力<br>
+本质：把 class 组件能力函数化
+Hooks 不是语法糖，而是 React 的函数式编程的实践</p></blockquote> <h2 id="为什么要使用-hooks"><a href="#为什么要使用-hooks" class="header-anchor">#</a> 为什么要使用 Hooks</h2> <h3 id="class-组件的问题"><a href="#class-组件的问题" class="header-anchor">#</a> Class 组件的问题</h3> <div class="custom-block tip"><p class="custom-block-title">Class</p> <ul><li>生命周期分散、复杂</li> <li><code>this</code> 易出错</li> <li>逻辑复用依赖 HOC / Render Props（嵌套深）</li> <li>状态与副作用耦合严重</li></ul></div> <h3 id="hooks-的优势"><a href="#hooks-的优势" class="header-anchor">#</a> Hooks 的优势</h3> <div class="custom-block tip"><p class="custom-block-title">Hooks</p> <ul><li>无 <code>this</code></li> <li>逻辑内聚（相关逻辑写在一起）</li> <li>易复用（自定义 Hook）</li> <li>更贴近函数式编程</li></ul></div> <h2 id="hooks-使用规则-铁律"><a href="#hooks-使用规则-铁律" class="header-anchor">#</a> Hooks 使用规则（铁律）</h2> <h3 id="只能在最外层调用-hook"><a href="#只能在最外层调用-hook" class="header-anchor">#</a> 只能在最外层调用 Hook</h3> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>不能在<code>if条件</code>、<code>for循环</code>、<code>while循环</code>、<code>普通js函数中</code>调用Hook</p></div> <h3 id="hooks-调用顺序必须一致"><a href="#hooks-调用顺序必须一致" class="header-anchor">#</a> Hooks 调用顺序必须一致</h3> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>React 通过Hooks的 <strong>调用顺序</strong> 关联 state</p></div> <h2 id="核心-hooks"><a href="#核心-hooks" class="header-anchor">#</a> 核心 Hooks</h2> <h3 id="usestate"><a href="#usestate" class="header-anchor">#</a> useState</h3> <div class="custom-block tip"><p class="custom-block-title">useState</p> <p>状态管理hook。
+更新状态会触发页面重新渲染。
+setState 是异步、批量的。</p></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> <span class="token punctuation">[</span>state<span class="token punctuation">,</span> setState<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span>initialValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 推荐</span>
+<span class="token function">setCount</span><span class="token punctuation">(</span><span class="token parameter">prev</span> <span class="token operator">=&gt;</span> prev <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 不推荐</span>
+<span class="token function">setCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 闭包旧值风险</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="useeffect"><a href="#useeffect" class="header-anchor">#</a> useEffect</h3> <div class="custom-block tip"><p class="custom-block-title">useEffect</p> <p>副作用管理（生命周期合体）hook。
+不同依赖含义：</p> <ul><li><code>不传</code>：每次 render 执行</li> <li><code>[]</code>: 只在页面挂载完之后执行(componentDidMount)</li> <li><code>[count]</code>: 依赖更新时执行</li></ul></div> <h3 id="useref"><a href="#useref" class="header-anchor">#</a> useRef</h3> <div class="custom-block tip"><p class="custom-block-title">useRef</p> <p>返回最新对象而且不触发重新渲染。
+比如存储定时器ID、避免闭包陷阱或访问DOM元素，因为它不参与 React 的状态更新机制，直接读取 .current 属性总能获取最新值</p></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> ref <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span>initialValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ref<span class="token punctuation">.</span>current <span class="token operator">=</span> value<span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="usememo"><a href="#usememo" class="header-anchor">#</a> useMemo</h3> <div class="custom-block tip"><p class="custom-block-title">useMemo</p> <p>缓存计算数据hook
+当计算开销大、依赖变化少时才使用（即算的慢，才memo），不然会起到优化反作用，</p></div> <h3 id="usecallback"><a href="#usecallback" class="header-anchor">#</a> useCallback</h3> <div class="custom-block tip"><p class="custom-block-title">useCallback</p> <p>缓存函数引用hook
+保证函数引用稳定，避免子组件不必要的重新渲染，常与React.memo 配合使用</p></div> <h3 id="usecontext"><a href="#usecontext" class="header-anchor">#</a> useContext</h3> <div class="custom-block tip"><p class="custom-block-title">useContext</p> <p>跨组件共享状态
+为了解决props drilling问题，注意context更新会导致所有消费者组件更新。</p></div> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token function">useContext</span><span class="token punctuation">(</span>MyContext<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">1/13/2026, 4:12:50 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/react/5.html" class="prev">
+        React之渲染优化
+      </a></span> <span class="next"><a href="/react/7.html">
+        React test
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.adc86153.js" defer></script><script src="/assets/js/3.69238fd6.js" defer></script><script src="/assets/js/2.c7128555.js" defer></script><script src="/assets/js/1.d6071190.js" defer></script><script src="/assets/js/96.95f65079.js" defer></script>
+  </body>
+</html>

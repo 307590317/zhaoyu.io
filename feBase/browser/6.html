@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>6、前后端的通信方式与HTTP | MrZhao&#39;s blog</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/assets/logo.jpg">
+    <meta name="description" content="个人博客">
+    
+    <link rel="preload" href="/assets/css/0.styles.7f07d26c.css" as="style"><link rel="preload" href="/assets/js/app.adc86153.js" as="script"><link rel="preload" href="/assets/js/3.69238fd6.js" as="script"><link rel="preload" href="/assets/js/2.c7128555.js" as="script"><link rel="preload" href="/assets/js/1.d6071190.js" as="script"><link rel="preload" href="/assets/js/33.fcee4871.js" as="script"><link rel="prefetch" href="/assets/js/100.d7ec3325.js"><link rel="prefetch" href="/assets/js/101.1e1bb1f6.js"><link rel="prefetch" href="/assets/js/102.794d216f.js"><link rel="prefetch" href="/assets/js/103.6565e39e.js"><link rel="prefetch" href="/assets/js/104.61c0282b.js"><link rel="prefetch" href="/assets/js/105.5c5e9f9a.js"><link rel="prefetch" href="/assets/js/106.9384fe72.js"><link rel="prefetch" href="/assets/js/107.348fd479.js"><link rel="prefetch" href="/assets/js/108.3c33b9ed.js"><link rel="prefetch" href="/assets/js/109.65ae043d.js"><link rel="prefetch" href="/assets/js/11.af4014cb.js"><link rel="prefetch" href="/assets/js/110.8982cf85.js"><link rel="prefetch" href="/assets/js/111.7ccd4e21.js"><link rel="prefetch" href="/assets/js/112.861df397.js"><link rel="prefetch" href="/assets/js/113.2e63ce89.js"><link rel="prefetch" href="/assets/js/114.53c238d9.js"><link rel="prefetch" href="/assets/js/115.73243686.js"><link rel="prefetch" href="/assets/js/116.d2fd53e8.js"><link rel="prefetch" href="/assets/js/117.68815a1b.js"><link rel="prefetch" href="/assets/js/118.46eccd4d.js"><link rel="prefetch" href="/assets/js/119.b5af0f67.js"><link rel="prefetch" href="/assets/js/12.a5cf139d.js"><link rel="prefetch" href="/assets/js/120.348e3434.js"><link rel="prefetch" href="/assets/js/121.c4789490.js"><link rel="prefetch" href="/assets/js/122.e26e9cc2.js"><link rel="prefetch" href="/assets/js/123.24ef60a1.js"><link rel="prefetch" href="/assets/js/124.20a823b8.js"><link rel="prefetch" href="/assets/js/125.e3e6759c.js"><link rel="prefetch" href="/assets/js/126.8f0b0f69.js"><link rel="prefetch" href="/assets/js/127.4784b7e4.js"><link rel="prefetch" href="/assets/js/128.4207c97c.js"><link rel="prefetch" href="/assets/js/129.16edc40e.js"><link rel="prefetch" href="/assets/js/13.7ff7858c.js"><link rel="prefetch" href="/assets/js/130.6ff67e2d.js"><link rel="prefetch" href="/assets/js/131.f4f0d954.js"><link rel="prefetch" href="/assets/js/132.def635be.js"><link rel="prefetch" href="/assets/js/133.bc56cd38.js"><link rel="prefetch" href="/assets/js/134.3ba4c3b3.js"><link rel="prefetch" href="/assets/js/135.98124879.js"><link rel="prefetch" href="/assets/js/136.8efad724.js"><link rel="prefetch" href="/assets/js/14.b0b0ce5d.js"><link rel="prefetch" href="/assets/js/15.6a364248.js"><link rel="prefetch" href="/assets/js/16.6b3933cb.js"><link rel="prefetch" href="/assets/js/17.2dfc0219.js"><link rel="prefetch" href="/assets/js/18.4e9902c3.js"><link rel="prefetch" href="/assets/js/19.04170ad8.js"><link rel="prefetch" href="/assets/js/20.c113fd2b.js"><link rel="prefetch" href="/assets/js/21.6c9baeb9.js"><link rel="prefetch" href="/assets/js/22.3f0d10d5.js"><link rel="prefetch" href="/assets/js/23.d77af887.js"><link rel="prefetch" href="/assets/js/24.598a2133.js"><link rel="prefetch" href="/assets/js/25.45036fea.js"><link rel="prefetch" href="/assets/js/26.e01010e1.js"><link rel="prefetch" href="/assets/js/27.cee97aea.js"><link rel="prefetch" href="/assets/js/28.3a31ac6d.js"><link rel="prefetch" href="/assets/js/29.db7acdc4.js"><link rel="prefetch" href="/assets/js/30.53d36e64.js"><link rel="prefetch" href="/assets/js/31.a4b42b33.js"><link rel="prefetch" href="/assets/js/32.0aabe8da.js"><link rel="prefetch" href="/assets/js/34.b720fdf6.js"><link rel="prefetch" href="/assets/js/35.383ff12b.js"><link rel="prefetch" href="/assets/js/36.3e6839cc.js"><link rel="prefetch" href="/assets/js/37.8c12b06d.js"><link rel="prefetch" href="/assets/js/38.4d0cb247.js"><link rel="prefetch" href="/assets/js/39.890d029a.js"><link rel="prefetch" href="/assets/js/4.22afcbe7.js"><link rel="prefetch" href="/assets/js/40.eb3e2f9e.js"><link rel="prefetch" href="/assets/js/41.90ac203b.js"><link rel="prefetch" href="/assets/js/42.eb77291b.js"><link rel="prefetch" href="/assets/js/43.d8b7ed00.js"><link rel="prefetch" href="/assets/js/44.e1301e8c.js"><link rel="prefetch" href="/assets/js/45.148883b8.js"><link rel="prefetch" href="/assets/js/46.2fd1ad6b.js"><link rel="prefetch" href="/assets/js/47.be067d2f.js"><link rel="prefetch" href="/assets/js/48.9882867f.js"><link rel="prefetch" href="/assets/js/49.d02d9e9b.js"><link rel="prefetch" href="/assets/js/5.9651ef5a.js"><link rel="prefetch" href="/assets/js/50.942cbf6e.js"><link rel="prefetch" href="/assets/js/51.caac4495.js"><link rel="prefetch" href="/assets/js/52.2daac61e.js"><link rel="prefetch" href="/assets/js/53.442c7cc9.js"><link rel="prefetch" href="/assets/js/54.9eddb6e3.js"><link rel="prefetch" href="/assets/js/55.02948cf5.js"><link rel="prefetch" href="/assets/js/56.3481cdbe.js"><link rel="prefetch" href="/assets/js/57.8e168694.js"><link rel="prefetch" href="/assets/js/58.92523396.js"><link rel="prefetch" href="/assets/js/59.da65a2e1.js"><link rel="prefetch" href="/assets/js/6.bb603ec8.js"><link rel="prefetch" href="/assets/js/60.ecc4e16e.js"><link rel="prefetch" href="/assets/js/61.8670517a.js"><link rel="prefetch" href="/assets/js/62.46bc56d3.js"><link rel="prefetch" href="/assets/js/63.59f8d1a9.js"><link rel="prefetch" href="/assets/js/64.e9867190.js"><link rel="prefetch" href="/assets/js/65.59f5647c.js"><link rel="prefetch" href="/assets/js/66.4bc9acc4.js"><link rel="prefetch" href="/assets/js/67.8ffe7b5d.js"><link rel="prefetch" href="/assets/js/68.41bccd56.js"><link rel="prefetch" href="/assets/js/69.58168c78.js"><link rel="prefetch" href="/assets/js/7.b18ad657.js"><link rel="prefetch" href="/assets/js/70.90267832.js"><link rel="prefetch" href="/assets/js/71.64694959.js"><link rel="prefetch" href="/assets/js/72.ada7dd96.js"><link rel="prefetch" href="/assets/js/73.2a411ed4.js"><link rel="prefetch" href="/assets/js/74.09ddf6e0.js"><link rel="prefetch" href="/assets/js/75.c275b107.js"><link rel="prefetch" href="/assets/js/76.5e0a308c.js"><link rel="prefetch" href="/assets/js/77.2f046bd0.js"><link rel="prefetch" href="/assets/js/78.4f431479.js"><link rel="prefetch" href="/assets/js/79.51c7bde7.js"><link rel="prefetch" href="/assets/js/8.de50125a.js"><link rel="prefetch" href="/assets/js/80.708587f0.js"><link rel="prefetch" href="/assets/js/81.60dc3666.js"><link rel="prefetch" href="/assets/js/82.5abe5e13.js"><link rel="prefetch" href="/assets/js/83.fae3fc33.js"><link rel="prefetch" href="/assets/js/84.7b3cf325.js"><link rel="prefetch" href="/assets/js/85.a3f9d054.js"><link rel="prefetch" href="/assets/js/86.69cd60e4.js"><link rel="prefetch" href="/assets/js/87.000134ec.js"><link rel="prefetch" href="/assets/js/88.9984f3ea.js"><link rel="prefetch" href="/assets/js/89.dd08af02.js"><link rel="prefetch" href="/assets/js/90.423187c1.js"><link rel="prefetch" href="/assets/js/91.f835ab76.js"><link rel="prefetch" href="/assets/js/92.583e67ef.js"><link rel="prefetch" href="/assets/js/93.7d34582c.js"><link rel="prefetch" href="/assets/js/94.6a7a28e7.js"><link rel="prefetch" href="/assets/js/95.b359cf8d.js"><link rel="prefetch" href="/assets/js/96.95f65079.js"><link rel="prefetch" href="/assets/js/97.6de938a4.js"><link rel="prefetch" href="/assets/js/98.b00f6772.js"><link rel="prefetch" href="/assets/js/99.e4c39c71.js"><link rel="prefetch" href="/assets/js/vendors~docsearch.a32f4da1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7f07d26c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">MrZhao's blog</span></a> <div class="links"><form id="search-form" role="search" class="algolia-search-wrapper search-box"><input id="algolia-search-input" class="search-query"></form> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/feBase/js/" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/base.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/css/1.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/browser/1.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/mini/1.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/react/1.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/ssr/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/cloudflare/tunnel.html" class="nav-link">
+  Cloudflare
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/base.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/rollup/base.html" class="nav-link">
+  Rollup
+</a></li><li class="dropdown-item"><!----> <a href="/project/base.html" class="nav-link">
+  Project
+</a></li></ul></div></div><div class="nav-item"><a href="/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/leetcode/array.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/test/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/web3/" class="nav-link">
+  web3
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端基础" class="dropdown-title"><span class="title">前端基础</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端基础" class="mobile-dropdown-title"><span class="title">前端基础</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/feBase/js/" class="nav-link">
+  Javascript
+</a></li><li class="dropdown-item"><!----> <a href="/ES6/base.html" class="nav-link">
+  ES6
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/css/1.html" class="nav-link">
+  Css
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/browser/1.html" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/feBase/mini/1.html" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/vue/" class="nav-link">
+  Vue
+</a></li><li class="dropdown-item"><!----> <a href="/react/1.html" class="nav-link">
+  React
+</a></li><li class="dropdown-item"><!----> <a href="/ssr/" class="nav-link">
+  SSR
+</a></li><li class="dropdown-item"><!----> <a href="/cloudflare/tunnel.html" class="nav-link">
+  Cloudflare
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="工程化" class="dropdown-title"><span class="title">工程化</span> <span class="arrow down"></span></button> <button type="button" aria-label="工程化" class="mobile-dropdown-title"><span class="title">工程化</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/webpack/base.html" class="nav-link">
+  Webpack
+</a></li><li class="dropdown-item"><!----> <a href="/rollup/base.html" class="nav-link">
+  Rollup
+</a></li><li class="dropdown-item"><!----> <a href="/project/base.html" class="nav-link">
+  Project
+</a></li></ul></div></div><div class="nav-item"><a href="/node/" class="nav-link">
+  Node
+</a></div><div class="nav-item"><a href="/leetcode/array.html" class="nav-link">
+  算法
+</a></div><div class="nav-item"><a href="/test/" class="nav-link">
+  常见问题
+</a></div><div class="nav-item"><a href="/web3/" class="nav-link">
+  web3
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>浏览器</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/feBase/browser/1.html" class="sidebar-link">1、浏览器</a></li><li><a href="/feBase/browser/2.html" class="sidebar-link">2、SEO与SEM优化</a></li><li><a href="/feBase/browser/3.html" class="sidebar-link">3、浏览器访问优化</a></li><li><a href="/feBase/browser/4.html" class="sidebar-link">4、HTTP协议</a></li><li><a href="/feBase/browser/5.html" class="sidebar-link">5、浏览器缓存</a></li><li><a href="/feBase/browser/6.html" aria-current="page" class="active sidebar-link">6、前后端的通信方式与HTTP</a></li><li><a href="/feBase/browser/7.html" class="sidebar-link">7、前端URL参数获取</a></li><li><a href="/feBase/browser/8.html" class="sidebar-link">8、URL中#、?、&amp;号的作用</a></li><li><a href="/feBase/browser/9.html" class="sidebar-link">9、从输入ULR到看到页面，中间经历了什么？</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><p></p><div class="table-of-contents"><ul><li><a href="#前后端需要用的技术">前后端需要用的技术</a></li><li><a href="#前端和后端是如何通信的">前端和后端是如何通信的</a></li><li><a href="#什么是内网ip">什么是内网IP</a></li><li><a href="#什么是外网ip">什么是外网IP</a></li><li><a href="#如何把本地文件上传到服务器">如何把本地文件上传到服务器</a></li><li><a href="#url-uri-urn">URL/URI/URN</a></li><li><a href="#传输协议">传输协议</a><ul><li><a href="#传输协议分类">传输协议分类</a></li><li><a href="#http报文">HTTP报文</a></li></ul></li><li><a href="#域名">域名</a></li><li><a href="#端口号">端口号</a></li><li><a href="#请求资源文件的路径名称">请求资源文件的路径名称</a></li><li><a href="#问号传参">问号传参</a></li><li><a href="#哈希值">哈希值</a></li></ul></div><p></p> <h1 id="_6、前后端的通信方式以及http"><a href="#_6、前后端的通信方式以及http" class="header-anchor">#</a> 6、前后端的通信方式以及HTTP</h1> <h2 id="前后端需要用的技术"><a href="#前后端需要用的技术" class="header-anchor">#</a> 前后端需要用的技术</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>需要用到的技术栈
+[前端]</p> <ul><li><code>HTML(5)+CSS(3)</code></li> <li><code>JAVAscript</code></li></ul> <p>[后端]</p> <ul><li><code>java</code></li> <li><code>Node</code></li> <li><code>PHP</code></li> <li><code>C#</code></li> <li><code>C</code></li></ul> <p>[数据库]</p> <ul><li><code>mySQL</code></li> <li><code>SQL Server</code></li> <li><code>mongodb</code>（和node结合紧密）</li></ul> <p>[自动化]</p> <ul><li><code>git、svn</code></li> <li><code>weboack</code>（基于NODE运行的）</li></ul> <p>服务器部署工具 <code>iis、apache、nginx</code></p></div> <h2 id="前端和后端是如何通信的"><a href="#前端和后端是如何通信的" class="header-anchor">#</a> 前端和后端是如何通信的</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>前端：客户端
+后端：服务器端
+前后端通过<code>HTTP</code>协议进行通信；
+所谓的全栈，其实是你可以实现客户端和服务器端程序的编写，而且还可以实现两端之间的通信</p></div> <h2 id="什么是内网ip"><a href="#什么是内网ip" class="header-anchor">#</a> 什么是内网IP</h2> <blockquote><p>内网（局域网：具备相同的<code>DNS</code>和默认网关，并且由相同的路由器下发的<code>IP</code>，限定在一定区域内访问的）</p> <p>自测：自己开发测试</p> <p>内测：上传到公司内网测试服务器上，交由公司测试进行BUG追踪</p> <p>公测：产品正式部署到外网服务器上</p></blockquote> <h2 id="什么是外网ip"><a href="#什么是外网ip" class="header-anchor">#</a> 什么是外网IP</h2> <blockquote><p>外网是不管是不是在同一个网段，用户都可以通过外网IP访问到你的服务器（一般我们会在服务器上做处理，禁止直接通过<code>IP</code>访问）</p></blockquote> <h2 id="如何把本地文件上传到服务器"><a href="#如何把本地文件上传到服务器" class="header-anchor">#</a> 如何把本地文件上传到服务器</h2> <blockquote><p>通过<code>FTP</code>把自己本地的项目文件上传到服务器执行的目录中(<code>filezilla：ftp</code>上传文件工具)</p> <p><code>DNS</code>服务器 域名解析服务器</p> <p>域名和服务器关联在一起，是通过DNS解析完成的，所谓<code>DNS</code>解析就是在<code>DNS</code>服务器上生成了一条解析记录，标注了子域名和对应的服务器的外网<code>IP</code>地址；</p></blockquote> <h2 id="url-uri-urn"><a href="#url-uri-urn" class="header-anchor">#</a> URL/URI/URN</h2> <blockquote><p><code>URI</code>：统一资源标识符</p> <p><code>URL</code>：统一资源路径地址</p> <p><code>URN</code>：统一资源名称</p> <p><code>URI = URL + URN</code> 统一资源标识符（统一资源信息）</p> <p>一个完整的URL包含很多部分：</p> <p>http://v.qq.com:80/index.html?name=ceshi&amp;age=7#bbs</p></blockquote> <h2 id="传输协议"><a href="#传输协议" class="header-anchor">#</a> 传输协议</h2> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>客户端传递给服务器端的内容和服务器端传递给客户端的内容都是通过<code>HTTP</code>传输协议进行传输的（可以把<code>HTTP</code>理解为快递小哥）</p> <ul><li>1、客户端不仅可以向服务器发送请求，而且还可以把一些内容传递给服务器</li> <li>2、服务器端也可以把内容返回给客户端</li></ul> <p>客户端请求的内容和服务器端响应的内容总称为 <em>HTTP报文</em> 。这些报文信息都是基于传输协议完成传输的，客户端传递给服务器叫做请求（<code>Request</code>），服务器返回给客户端叫做响应（<code>Respone</code>），<code>request+response</code>两个阶段统称为<em>HTTP事务</em>（事务：一件完整的事情）</p> <p><em>HTTP事务</em>：</p> <ul><li>1、当客户端向服务器端发送请求，此时客户端和服务器端会建立一个传输通道（链接通道），传输协议就是基于这个通道把信息进行传输的</li> <li>2、当服务器端接收到请求信息，把内容返回给客户端后，传输通道会自动销毁关闭；</li></ul></div> <h3 id="传输协议分类"><a href="#传输协议分类" class="header-anchor">#</a> 传输协议分类</h3> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p><code>http</code>：超文本传输协议</p> <ul><li>客户端和服务器端传输的内容除了文本以外，还可以传输图片、音视频等文件流[二进制编码、BASE64码]，以及传输XML格式的数据等），是目前市场上应用最广泛的传输协议；</li></ul> <p><code>https：http + ssl</code></p> <ul><li>它比<code>http</code>更加安全，因为数据内容的传输通道是经过<code>ssl</code>加密的（它需要在服务器端进行特殊的处理），所以涉及资金类的网站一般都是<code>https</code>协议的</li></ul> <p><code>ftp</code>：资源文件传输协议</p> <ul><li>一般用于客户端把资源文件（不是代码）上传到服务器端，或者从服务器端下载一些资源文件（一般<code>ftp</code>传输的内容会比<code>http</code>这类协议传输的内容多）</li></ul></div> <h3 id="http报文"><a href="#http报文" class="header-anchor">#</a> HTTP报文</h3> <div class="custom-block tip"><p class="custom-block-title">HTTP报文</p> <p>客户端请求的内容和服务器端响应的内容总称为<em>HTTP报文</em>
+包括以下部分：</p> <ul><li>1、起始行
+<ul><li>请求起始行</li> <li>响应起始行</li></ul></li> <li>2、首部（头）
+<ul><li>请求头：内置请求头、自定义请求头</li> <li>响应头：内置响应头、自定义响应头</li> <li>通用头：请求和响应的都有</li></ul></li> <li>3、主体
+<ul><li>请求主体</li> <li>响应主体</li></ul></li></ul> <p>请求xxx都是客户端设置的信息，服务器端获取这些信息；
+响应xxx都是服务器端设置的信息，客户端获取这些信息；</p> <p>在谷歌浏览器控制台NetWork中选项中，我们可以看见当前客户端和服务器端交互的全部信息；</p> <p>客户端向服务器端传递数据的3种方式</p> <ul><li>1、URL问号传参</li> <li>2、设置请求头</li> <li>3、设置请求主体</li></ul> <p>服务器端返回给客户端数据的2种方式</p> <ul><li>1、设置响应头（例如服务器时间）</li> <li>2、设置响应主体</li></ul></div> <h2 id="域名"><a href="#域名" class="header-anchor">#</a> 域名</h2> <div class="custom-block tip"><p class="custom-block-title">域名分类</p> <p>设置域名其实就给不好记忆的服务器外网<code>IP</code>设置了一个好记忆的名字
+根域名：com、cn……
+顶级域名（一级域名）：qq.com
+二级域名：www.qq.com、v.qq.com、sports.qq.com ...
+三级域名：kbs.sports.qq.com</p></div> <h2 id="端口号"><a href="#端口号" class="header-anchor">#</a> 端口号</h2> <div class="custom-block tip"><p class="custom-block-title">域名分类</p> <p>在服务器上发布项目的时候，我们用端口号来区分不同的项目
+一台服务器的端口号范围：0~65535
+如果电脑上安装了很多程序，有一些端口号是被占用了
+<code>HTTP</code>默认端口号：80
+<code>HTTPS</code>默认端口号：443
+<code>FTP</code>默认端口号：21
+对于上述三个端口号是很重要的，如果被其他程序占用，我们则不能使用了；所以服务器上一般是禁止安装其他程序的；</p></div> <h2 id="请求资源文件的路径名称"><a href="#请求资源文件的路径名称" class="header-anchor">#</a> 请求资源文件的路径名称</h2> <blockquote><p>在服务器中发布项目的时候，我们一般都会配置一些默认文档：用户及时不输入请求文件的名称，服务器也会找到默认文档（一般默认文档都是index/default...）;</p> <p>我们通常为了做<code>SEO</code>优化，会把一些动态页面的地址进行伪U<code>RL</code>重写（服务器处理），把动态的<code>URL</code>地址重写为静态的<code>URL</code>地址，利于爬虫抓取</p></blockquote> <h2 id="问号传参"><a href="#问号传参" class="header-anchor">#</a> 问号传参</h2> <div class="custom-block tip"><p class="custom-block-title">Url传参</p> <p><code>?name=zf&amp;age=9</code>
+把一些值通过xxx=xxx的方式，放在一个<code>URL</code>的末尾，通过问号传递；</p> <p><em>[作用]</em></p> <ul><li>1、在AJAX请求中，我们可以通过问号传递参数的方式，客户端把一些信息传递给服务器，服务器根据传递信息的不一样，返回不同的数据；</li> <li>2、消除AJAX请求中GET方式的缓存：比如<br> <code>http://www.xxxxx.com/index.html</code><br> <code>http://www.xxxxx.com/index.html?test123123</code><br>
+两个<code>url</code>打开的页面一样，但是后面这个有问号，说明不调用缓存的内容，而认为是一个新地址，重新读取。</li> <li>3、通过<code>URL</code>传参的方式，可以实现页面之间信息的通讯，例如：我们有两个页面A/B，A是列表页面，B是详情页，点击A中的某一条信息，进入到唯一的详情页B，可以通过<code>URL</code>传递不同得参数来获取不同的数据；</li></ul></div> <h2 id="哈希值"><a href="#哈希值" class="header-anchor">#</a> 哈希值</h2> <div class="custom-block tip"><p class="custom-block-title">哈希</p> <p><code>URL</code>末尾传递的井号什么，就是<code>HASH</code>值（哈希值）</p> <p><em>作用：</em>
+1、页面中锚点定位
+2、前端路由(SPA单页面开发)</p></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">4/16/2021, 11:27:51 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/feBase/browser/5.html" class="prev">
+        5、浏览器缓存
+      </a></span> <span class="next"><a href="/feBase/browser/7.html">
+        7、前端URL参数获取
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.adc86153.js" defer></script><script src="/assets/js/3.69238fd6.js" defer></script><script src="/assets/js/2.c7128555.js" defer></script><script src="/assets/js/1.d6071190.js" defer></script><script src="/assets/js/33.fcee4871.js" defer></script>
+  </body>
+</html>
